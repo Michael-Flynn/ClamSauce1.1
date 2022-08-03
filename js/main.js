@@ -37,7 +37,7 @@
 
   homeCarouselItems.forEach((item, index) => {
     (index === 0) ?
-    homeCarouselIndicators.innerHTML += "<li data-bs-target='#homeCarousel' data-bs-slide-to='" + index + "' class='active'></li>":
-      homeCarouselIndicators.innerHTML += "<li data-bs-target='#homeCarousel' data-bs-slide-to='" + index + "'></li>"
+    homeCarouselIndicators.innerHTML += "<li data-target='#homeCarousel' data-slide-to='" + index + "' class='active'></li>":
+      homeCarouselIndicators.innerHTML += "<li data-target='#homeCarousel' data-slide-to='" + index + "'></li>"
   });
 })()
