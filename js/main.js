@@ -23,14 +23,6 @@
       }
     }
   }
-  
-  window.addEventListener('load', () => {
-    if (window.location.hash) {
-      if (select(window.location.hash)) {
-        scrollto(window.location.hash)
-      }
-    }
-  });
 
   let homeCarouselIndicators = select("#home-carousel-indicators")
   let homeCarouselItems = select('#homeCarousel .carousel-item', true)
@@ -40,4 +32,14 @@
     homeCarouselIndicators.innerHTML += "<li data-target='#homeCarousel' data-slide-to='" + index + "' class='active'></li>":
       homeCarouselIndicators.innerHTML += "<li data-target='#homeCarousel' data-slide-to='" + index + "'></li>"
   });
+ 
 })()
+
+let removeCartItem = document.getElementsByClassName('btn-danger')
+for (let i = 0; i < removeCartItem.length; i++) {
+  let button = removeCartItem[i]
+  button.addEventListener('click', function(event) {
+    let buttonClicked = event.target
+    buttonClicked.parentElement.parentElement.remove()
+  })
+}
